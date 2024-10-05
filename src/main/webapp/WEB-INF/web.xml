@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="5.0" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd">
+    <display-name>Mi app de Jakarta</display-name>
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.edsondev26.Jakarta_EE_Exam_EIV.controllers.LoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>VentaServlet</servlet-name>
+        <servlet-class>com.edsondev26.Jakarta_EE_Exam_EIV.controllers.VentaServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>VentaServlet</servlet-name>
+        <url-pattern>/VentaServlet</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <context-param>
+        <param-name>adminUser</param-name>
+        <param-value>admin</param-value>
+    </context-param>
+    <context-param>
+        <param-name>adminPass</param-name>
+        <param-value>admin123</param-value>
+    </context-param>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+</web-app>
