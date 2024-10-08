@@ -28,13 +28,8 @@ public class ListarVentasServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Obtener la lista de ventas del bean
         List<Venta> ventas = ventaBean.obtenerVentas();
-
-        // Pasar la lista de ventas a la JSP
         request.setAttribute("ventas", ventas);
-
-        // Redireccionar a la página listarVentas.jsp
         request.getRequestDispatcher("listarVentas.jsp").forward(request, response);
     }
 }
