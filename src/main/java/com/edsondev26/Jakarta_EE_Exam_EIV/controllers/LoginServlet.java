@@ -7,6 +7,7 @@ package com.edsondev26.Jakarta_EE_Exam_EIV.controllers;
 import java.io.IOException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -29,7 +30,11 @@ public class LoginServlet extends HttpServlet {
         if (adminUser.equals(username) && adminPass.equals(password)) {
             HttpSession session = request.getSession();
             session.setAttribute("username", username);
-
+            
+            Cookie cookie = new Cookie("username", username);
+            cookie.setMaxAge(60*60*24*3);  // Se definde duracion de 3 dias
+            response.addCookie(cookie);
+            
             response.sendRedirect("registraVenta.jsp");
         } else {
             response.sendRedirect("login.jsp?error=invalid");

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="5.0" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd">
-    <display-name>Mi app de Jakarta</display-name>
+    <display-name>Examen Jakarta</display-name>
+    <welcome-file-list>
+        <welcome-file>login.jsp</welcome-file>
+    </welcome-file-list>
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>com.edsondev26.Jakarta_EE_Exam_EIV.controllers.LoginServlet</servlet-class>
@@ -9,6 +12,10 @@
         <servlet-name>VentaServlet</servlet-name>
         <servlet-class>com.edsondev26.Jakarta_EE_Exam_EIV.controllers.VentaServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ListarVentas</servlet-name>
+        <servlet-class>com.edsondev26.Jakarta_EE_Exam_EIV.controllers.ListarVentasServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
@@ -16,6 +23,10 @@
     <servlet-mapping>
         <servlet-name>VentaServlet</servlet-name>
         <url-pattern>/VentaServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListarVentas</servlet-name>
+        <url-pattern>/ListarVentas</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -23,6 +23,12 @@ public class Venta {
         this.fecha = fecha;
         this.productos = productos;
     }
+    
+    public double getSubtotal() {
+        return productos.stream()
+                .mapToDouble(p -> p.getPrecio() * p.getCantidad())
+                .sum();
+    }
 
     public String getNitCliente() {
         return nitCliente;
